@@ -184,7 +184,7 @@ public interface Resource {
   /**
    * Resource types.  Allows for the addition of external types.
    */
-  final class Type implements Comparable<Type>{
+  final class Type implements Comparable<Type> {
 
     /**
      * Map of all registered types.
@@ -308,13 +308,13 @@ public interface Resource {
     /**
      * Construct an internal type.
      *
-     * @param name     the type name
-     * @param ordinal  the ordinal number
+     * @param name    the type name
+     * @param ordinal the ordinal number
      */
     private Type(String name, int ordinal) {
-      assert(name != null);
+      assert (name != null);
 
-      this.name    = name;
+      this.name = name;
       this.ordinal = ordinal;
 
       setType(name, this);
@@ -323,7 +323,7 @@ public interface Resource {
     /**
      * Construct an extended type.
      *
-     * @param name  the type name
+     * @param name the type name
      */
     public Type(String name) {
       this(name, getNextOrdinal());
@@ -363,7 +363,6 @@ public interface Resource {
      * Get the internal type enum associated with this type.
      *
      * @return the internal type enum
-     *
      * @throws UnsupportedOperationException if this type is not an internal type
      */
     public InternalType getInternalType() {
@@ -376,10 +375,8 @@ public interface Resource {
     /**
      * Get the type associated with the given type name.
      *
-     * @param name  the type name
-     *
+     * @param name the type name
      * @return the associated type
-     *
      * @throws IllegalArgumentException if the given type name is not associated with any known type
      */
     public static Type valueOf(String name) {

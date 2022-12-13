@@ -1,0 +1,1 @@
+# ambari-centos7
